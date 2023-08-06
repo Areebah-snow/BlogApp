@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const Blog = require('./models/blog')
+const { render } = require('ejs')
 const app = express()
 
 //register view engine
@@ -60,7 +61,13 @@ app.post('/blogs',(req,res)=>{
 
 app.get('/blogs/:id',(req,res)=>{
     const id = req.params.id;
-    console.log(id)
+    Blog.findbyId(id)
+    .thn(result =>{
+        render('details', { blog: result, title: 'Blog details' });
+    })
+    .catch(err =>{
+       console.log(err) 
+    })
 })
 
 app.get('/blogs/create',(req,res)=>{
