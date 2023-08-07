@@ -10,7 +10,7 @@ const app = express()
 app.set('view engine', 'ejs');
 
 
-//connect to mongodb
+
 
 const dbURL= 'mongodb+srv://Areebah-snow:Aisha1234@nodetuts.sts1rtz.mongodb.net/node-tuts'
 mongoose.connect(dbURL) 
@@ -78,12 +78,7 @@ app.use((req,res)=>{
     res.status(404).render('404', { title: '404'})
 })
 
-//connect mongo url
-//mongodb+srv://Areebah-snow:<password>@nodetuts.sts1rtz.mongodb.net/?retryWrites=true&w=majority
-//mongodb+srv://Areebah-snow:<password>@nodetuts.sts1rtz.mongodb.net/
-
-//mongoose and mongo sandbox routes
-
+ 
 // app.get('/add-blog',(req,res)=>{
 //   const blog = new Blog({
 //     title:'new blog2',
