@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 
 
-const dbURL= 'mongodb+srv://Areebah-snow:Aisha1234@nodetuts.sts1rtz.mongodb.net/node-tuts'
+
 mongoose.connect(dbURL) 
 .then((result)=>app.listen(3000))
 .catch((err)=>console.log(err))
@@ -78,19 +78,7 @@ app.use((req,res)=>{
     res.status(404).render('404', { title: '404'})
 })
 
- 
-// app.get('/add-blog',(req,res)=>{
-//   const blog = new Blog({
-//     title:'new blog2',
-//     snippet: 'about my new blog',
-//     body: 'more about my new blog'
-//   });
 
-//   blog.save()
-//   .then((result)=>{
-//     res.send(result)
-//   })
-//   .catch((err)=>{
-//     console.log(err)
-//   })
-// })
+
+ 
+
